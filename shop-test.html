@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Бишкек парк</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/jquery.remodal.min.css">
+    <!-- CCS for the effects-->
+    <!--  <link href="css/effects.css" rel="stylesheet">  -->
+</head>
+
+<body class="shops" ng-app="storesApp" ng-controller="StoresCtrl">
+    <div class="md-modal md-effect-16" ng-class="{'md-show': modal_show} " id="modal-16">
+        <div class="md-content">
+            <div class="row">
+                <div class="col-nd-12 modalBlock">
+                    <div class="col-md-6">
+                        <div id="sync1" class="owl-carousel" >
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                           
+                        </div>
+                        <div id="sync2" class="owl-carousel">
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                            <div class="item"><img src="img/colins.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="description">
+                            <h1>{{shop_name}}</h1> 
+                            {{shop_description}}
+                            <span class="contact">
+                                {{shop_email}}<br/>
+                                {{shop_tel1}}
+                                {{shop_tel2}}
+                                {{shop_tel3}}
+                            </span>
+                        </div>
+                        <div class="contactBlock">
+                            <ul class="socialLink">
+                                <li ng-if='instagram !== ""'><a href="https://www.instagram.com/{{instagram}}" target="_blank"><i class=" fa fa-instagram"></i></a></li>
+                                <li ng-if='facebook !== ""'><a href="https://www.facebook.com/{{facebook}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li ng-if='twitter !== ""'><a href="https://www.twitter.com/{{twitter}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="top-navigation">
+            <div class="header-line"></div>
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="navbar-brand navbar-brand-centered">
+                                    <a href="index.html"><img class="logo" src="img/logo.jpg" alt="БишкекПарк"></a>
+                                </div>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                                <ul class="nav navbar-nav navbar-left">
+                                    <li class="active"><a href="shops.html">Магазины</a></li>
+                                    <li><a href="entertainment.html">Развлечения</a></li>
+                                    <li><a href="food.html">Рестораны</a></li>
+                                </ul>
+                                <ul id="right" class="nav navbar-nav navbar-right">
+                                    <li><a href="events.html">Мероприятия</a></li>
+                                    <li><a href="service.html">Услуги</a></li>
+                                    <li><a href="#">Резиденция</a></li>
+                                </ul>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="slider">
+        <div class="socialLinks">
+            <a href="https://www.facebook.com/BishkekPark/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="http://instagram.com/bishkekpark" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://youtube.com/user/BishkekPark1" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/+BishkekParkofficial" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="dp-blog">
+                    <a href="#">
+                        <img src="img/live-btn.png" alt="">
+                        <button class="md-trigger" data-modal="modal-16">Подробнее</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="sectionHead">
+        </div>
+        <div class="shopsblock">
+            <div class="container">
+                <div class="row">
+                    <form class="searchbox">
+                        <input type="search" placeholder="Поиск" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+                        <input type="submit" class="searchbox-submit" value="GO">
+                        <span class="searchbox-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                    </form>
+                    <div class="clr"></div>
+                    <ul class="shopsCategory">
+                        <li><a href="#">Поиск по разделу</a></li>
+                        <li><a href="#">Фильтр по категориям</a></li>
+                        <li><a href="#">Фильтр по этажам</a></li>
+                        <li class="mapLink">
+                            <a href="#"><img src="img/map.png" alt=""></a>
+                        </li>
+                    </ul>
+                    <div id="shops">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="shop in stores">
+                            <span class="heared">{{shop.name}}</span>
+                            <div class="hovereffect">
+                                <img class="img-responsive" ng-src="uploads/stores/{{shop.thumbnail}}.jpg" alt="">
+                                <div class="overlay">
+                                    <a ng-sref="" class="md-trigger" data-modal="modal-16" ng-click="openModal(shop)">Подробнее</a>
+                                    <h2></h2>
+                                    <a ng-if='shop.instagram !== ""' href="https://www.instagram.com/{{shop.instagram}}" target="_blank"><i class=" fa fa-instagram"></i></a>
+                                    <a ng-if='shop.facebook !== ""' href="https://www.facebook.com/{{shop.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a ng-if='shop.twitter !== ""' href="https://www.twitter.com/{{shop.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end shops -->
+                    <div class="clr"></div>
+                </div>
+                <div class="clr"></div>
+            </div>
+           
+        </div>
+    </section>
+    <div class="memo-block">
+        <div class="infoBlock">
+            Крупнейший торгово-развлекательный комплекс «Bishkek Park», это идеальное место для отдыха, шопинга и развлечений. В комплексе более 100 бутиков и различных заведений. Магазины и сервисы предлагают широчайший ассортимент товара и услуг мировых брендов.
+            <br> Режим работы с 10:00 до 22:00 без перерыва и выходных.
+        </div>
+        <div class="mapBlock">
+            <div id="map"><img src="img/map.jpg" alt=""></div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default red-btn phone" aria-label="phone">
+                +996 312 312
+            </button>
+            <button type="button" id="info" class="btn btn-default red-btn" aria-label="info-sign">
+                <i class="fa fa-info" aria-hidden="true"></i>
+            </button>
+            <button type="button" id="map-marker" class="btn btn-default red-btn" aria-label="map-marker">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <footer>
+        <ul class="footer-nav">
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Обратная связь</a></li>
+        </ul>
+    </footer>
+    <div class="remodal-bg">
+        <div id="big" class="remodal" data-remodal-id="modalz">
+            <div class="bigBanner">
+                <img id="mobile" src="img/bigBanner.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="md-overlay" ng-click="closeModal()"></div>
+    <!-- the overlay element -->
+    <script src="js/libs.min.js"></script>
+    <script src="js/common.js"></script>
+    <!-- ANGULAR -->
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+    // Define the `storesApp` module
+    var stores = angular.module('storesApp', []);
+
+    // Define the `StoresCtrl` controller on the `storesApp` module
+    stores.controller('StoresCtrl', function StoresCtrl($scope) {
+        $scope.stores = [{
+            name: "Levi's",
+            thumbnail: "store1",
+            description: "Levi’s (Левис) – американский бренд, под именем которого были созданы и запатентованы первые в мире джинсы. Специализируется на производстве мужской, женской и детской одежды, обуви и аксессуаров. Визитной карточкой бренда является одежда в стиле деним. Компания выступает создателем благотворительного фонда Levi Strauss Foundation (1952 г.). На 2013 год Levi’s входит в группу компаний Levi Strauss & Co.",
+            email: '',
+            tel1: '0312 31 14 11',
+            tel2: '',
+            tel3: '',
+            instagram: 'LEVIS_KG',
+            facebook: '',
+            twitter: '',
+                gallery: ['store1', 'store2', 'store3','store4']
+        }, {
+            name: "Clarks",
+            thumbnail: "store2",
+            description: "Levi’s (Левис) – американский бренд, под именем которого были созданы и запатентованы первые в мире джинсы. Специализируется на производстве мужской, женской и детской одежды, обуви и аксессуаров. Визитной карточкой бренда является одежда в стиле деним. Компания выступает создателем благотворительного фонда Levi Strauss Foundation (1952 г.). На 2013 год Levi’s входит в группу компаний Levi Strauss & Co.",
+            email: '',
+            tel1: '0312 31 14 11',
+            tel2: '',
+            tel3: '',
+            instagram: 'LEVIS_KG',
+            facebook: '',
+            twitter: '',
+            gallery: ''
+        }];
+
+        $scope.modal_show = false;
+        $scope.openModal = function(shop) {
+            $scope.modal_show = true;
+            $scope.shop_name = shop.name;
+            $scope.shop_description = shop.description;
+            $scope.shop_email = shop.email;
+            $scope.shop_tel1 = shop.tel1;
+            $scope.shop_tel2 = shop.tel2;
+            $scope.shop_tel3 = shop.tel3;
+            $scope.instagram = shop.instagram;
+            $scope.facebook = shop.facebook;
+            $scope.twitter = shop.twitter;
+            $scope.shop_gallery = shop.gallery;
+            
+
+            console.log(shop.gallery)
+        }
+        $scope.closeModal = function() {
+            $scope.modal_show = false;
+        }
+    });
+    </script>
+    <!-- modal -->
+    <script src="js/modal/classie.js"></script>
+    <script src="js/modal/cssParser.js"></script>
+    <script src="js/modal/modalEffects.js"></script>
+    <script type="text/javascript">
+    $(window).scroll(function(e) {
+        parallax();
+    });
+
+    function parallax() {
+        var scrolled = $(window).scrollTop();
+        $('.parallax__group').css('top', -(scrolled * 0.2) + 'px');
+    }
+    </script>
+    <script>
+    $(document).ready(function() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $("#mobile").attr("src", "img/smallBanner.jpg");
+        } else {
+            $("#mobile").attr("src", "img/bigBanner.jpg");
+        }
+    });
+    var inst = $('[data-remodal-id = modalz]').remodal();
+    var i = $.cookie('step') || 0;
+    i++;
+    $.cookie('step', i);
+    if (i % 5 == 0) {
+        var inst = $.remodal.lookup[$('[data-remodal-id = modalz]').data('remodal')];
+        inst.open();
+    } else {
+        inst.close();
+    }
+    </script>
+</body>
+
+</html>

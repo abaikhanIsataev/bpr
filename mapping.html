@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abbas Fatullaev">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Бишкек парк</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/jquery.qtip.css">
+    <link rel="stylesheet" href="css/jquery.remodal.min.css">
+    <style type="text/css">
+    .carousel-inner>.item {
+        max-height: 300px;
+    }
+    </style>
+</head>
+
+<body class="mapping" ng-app="BishParkApp" ng-controller="FoodCtrl">
+    <header>
+        <div class="top-navigation">
+            <div class="header-line"></div>
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="navbar-brand navbar-brand-centered">
+                                    <a href="index.html"><img class="logo" src="img/logo.jpg" alt="БишкекПарк"></a>
+                                </div>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                                <ul class="nav navbar-nav navbar-left">
+                                    <li><a href="shops.html">Магазины</a></li>
+                                    <li><a href="entertainment.html">Развлечения</a></li>
+                                    <li class="active"><a href="food.html">Еда</a></li>
+                                </ul>
+                                <ul id="right" class="nav navbar-nav navbar-right">
+                                    <li><a href="events.html">Мероприятия</a></li>
+                                    <li><a href="service.html">Услуги</a></li>
+                                    <li><a href="#">Резиденция</a></li>
+                                </ul>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="slider">
+        <div class="socialLinks">
+            <span class="collapser">
+                <i class="fa fa-chevron-left open" aria-hidden="true"></i>
+                <i class="fa fa-chevron-right closed" aria-hidden="true"></i>
+            </span>
+            <a href="https://www.facebook.com/BishkekPark/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="http://instagram.com/bishkekpark" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://youtube.com/user/BishkekPark1" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/+BishkekParkofficial" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        </div>
+        <div class="sectionHead" style="background-image: url(img/ShopsHeader.jpg);">
+            <div class="container">
+                <div class="row">
+                    <div class="dp-blog">
+                        <a href="blog.html">
+                            <img src="img/live-btn.png" alt="">
+                        </a>
+                    </div>
+                    <ul class="foodCategory">
+                        <li><a href="#">Кафе</a></li>
+                        <li><a href="#">Фастфуд</a></li>
+                        <li><a href="#">Кофейни</a></li>
+                        <li class="mapLink">
+                            <a href="#"><img src="img/map.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs tabs-left sideways" role="tablist">
+                        <li role="presentation" class="active"><a href="#tab-floor-m1" aria-controls="floor-m1" role="tab" data-toggle="tab">Этаж М1</a></li>
+                        <li role="presentation"><a href="#tab-floor-0" aria-controls="floor-0" role="tab" data-toggle="tab">Этаж 0</a></li>
+                        <li role="presentation"><a href="#tab-floor-1" aria-controls="floor-1" role="tab" data-toggle="tab">Этаж 1</a></li>
+                        <li role="presentation"><a href="#tab-floor-2" aria-controls="floor-2" role="tab" data-toggle="tab">Этаж 2</a></li>
+                        <li role="presentation"><a href="#tab-floor-3" aria-controls="floor-3" role="tab" data-toggle="tab">Этаж 3</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="tab-floor-m1">
+                                <img border="0" usemap="#floor-m1" alt="M1" src="uploads/maps/floor-m1.jpg" class="floor-img img-responsive" />
+                                <map id="floor-m1" name="floor-m1">
+                                    <area place="m1-1" shape="rect" coords="-1, 18, 181, 436" title="1">
+                                    <area place="m1-2" shape="rect" coords="215, 19, 352, 305" title="2">
+                                    <area place="m1-3" shape="rect" coords="352, 20, 447, 305" title="3">
+                                    <area place="m1-4" shape="poly" coords="445, 19, 538, 19, 538, 131, 450, 178" title="4">
+                                    <area place="m1-5" shape="rect" coords="540, 94, 582, 133" title="5">
+                                    <area place="m1-6" shape="poly" coords="642, 93, 642, 130, 707, 130, 707, 18, 660, 18, 660, 94" title="6" >
+                                    <area place="m1-7" shape="rect" coords="708, 18, 797, 130" title="7" >
+                                    <area place="m1-8" shape="rect" coords="796, 17, 889, 129" title="8" >
+                                    <area place="m1-9" shape="rect" coords="888, 17, 974, 130" title="9" >
+                                    <area place="m1-10" shape="poly" coords="974, 1, 974, 131, 1098, 131, 1098, 91, 1155, 91, 1155, 18, 1067, 18, 1067, -1" title="10" >
+                                    <area place="m1-11" shape="poly" coords="933, 475, 1155, 475, 1155, 835, 1064, 835, 1064, 622, 934, 622" title="11" >
+                                    <area place="m1-12" shape="rect" coords="831, 475, 932, 623" title="12" >
+                                    <area place="m1-13" shape="rect" coords="755, 458, 796, 475" title="13" >
+                                    <area place="m1-14" shape="rect" coords="717, 459, 736, 473" title="14" >
+                                    <area place="m1-15" shape="rect" coords="725, 414, 756, 444" title="15" >
+                                    <area place="m1-16" shape="rect" coords="634, 476, 682, 546" title="16" >
+                                    <area place="m1-17" shape="poly" coords="537, 565, 537, 476, 633, 476, 633, 544, 621, 544, 621, 565" title="17" >
+                                    <area place="m1-18" shape="poly" coords="432, 727, 537, 727, 537, 567, 620, 567, 620, 818, 432, 818" title="18" >
+                                    <area place="m1-19" shape="rect" coords="350, 725, 430, 820" title="19" >
+                                    <area place="m1-20" shape="rect" coords="270, 725, 351, 833" title="20" >
+                                    <area place="m1-21" shape="poly" coords="1, 501, 0, 834, 92, 834, 92, 801, 204, 801, 204, 743, 224, 743, 224, 504" title="21" >
+                                    <area place="m1-22" shape="rect" coords="2, 437, 216, 501" title="22" >
+                                    <area place="m1-23" shape="poly" coords="432, 454, 413, 464, 413, 505, 448, 505, 448, 453" title="23" >
+                                </map>
+
+                                <div id="floor-m1-1" class="tooltip-content">
+                                    <img src="uploads/stores/store1.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-2" class="tooltip-content">
+                                    <img src="uploads/stores/store2.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-3" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-4" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-5" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-6" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-7" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-8" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-9" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-10" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-11" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-12" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-13" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-14" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-15" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-16" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-17" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-18" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-19" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-20" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-21" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-22" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                                <div id="floor-m1-23" class="tooltip-content">
+                                    <img src="uploads/stores/store3.jpg" class="img-responsive" alt="">
+                                    <h4>LEVI'S</h4>
+                                </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab-floor-0">
+                            <img src="uploads/maps/floor-0.jpg" alt="" usemap="floor-0" class="floor-map img-responsive">
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab-floor-1">
+                            <img src="uploads/maps/floor-1.jpg" alt="" usemap="floor-1" class="floor-map img-responsive">
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab-floor-2">
+                            <img src="uploads/maps/floor-2.jpg" alt="" usemap="floor-2" class="floor-map img-responsive">
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab-floor-3">
+                            <img src="uploads/maps/floor-3.jpg" alt="" usemap="floor-3" class="floor-map img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="memo-block">
+        <div class="infoBlock">
+            Крупнейший торгово-развлекательный комплекс «Bishkek Park», это идеальное место для отдыха, шопинга и развлечений. В комплексе более 100 бутиков и различных заведений. Магазины и сервисы предлагают широчайший ассортимент товара и услуг мировых брендов.
+            <br> Режим работы с 10:00 до 22:00 без перерыва и выходных.
+        </div>
+        <div class="mapBlock">
+            <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.9149532899355!2d74.58825781488126!3d42.87463917915566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7dec2f84b71%3A0x29c1629c788878ab!2z0JHQuNGI0LrQtdC6INCf0LDRgNC6!5e0!3m2!1sru!2skg!4v1464666152218" width="100%" height="230" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn red-btn phone" aria-label="phone">
+                +996 312 69 11 11
+            </button>
+            <button type="button" id="info" class="btn red-btn" aria-label="info-sign">
+                <i class="fa fa-info" aria-hidden="true"></i>
+            </button>
+            <button type="button" id="map-marker" class="btn red-btn" aria-label="map-marker">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <footer class="">
+        <ul class="footer-nav" role="tablist">
+            <li role="presentation"><a href="#aboutus" aria-controls="home" role="tab" data-toggle="tab">О нас</a></li>
+            <li role="presentation"><a href="#callback" aria-controls="home" role="tab" data-toggle="tab">Обратная связь</a></li>
+        </ul>
+        <div class="toogleTop">
+            <div class="tab-content text-center">
+                <a href="#" class="closeToogleBtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                <div role="tabpanel" class="tab-pane fade in  active" id="aboutus">
+                    <h3 class="aboutus-title">ТОРГОВЫЙ ЦЕНТР ДЛЯ ВАС</h3>
+                    <div class="aboutus-dscr">
+                        <p>Торговый центр «Bishkek Park» в настоящее время является одним из крупнейших торговых центров Бишкека.</p>
+                        <p>Если вы выбрали торгово-развлекательный комплекс «Bishkek Park» в качестве места для отдыха и совершения покупок, тот вы, несомненно, приняли мудрое решение. «Bishkek Park» — это прекрасное место для шопинга и развлечений. В комплексе более 100 бутиков и развлекательных заведений. Магазины предлагают вам широчайший ассортимент товара различных мировых и брендов. Основные торговые марки: «Ecco», «Colin’s», «Mexx», «Mango», «Navigare», «Beneton», «Ramsey» «Mavi», «Terranova», «Kira Plastinina».</p>
+                        <p>Развлечений здесь тоже достаточно: это кинотеатр «Синематика», «Боулинг», аттракцион для детей «Fun Land», а также более 15 объектов питания с европейской и восточной кухней, подземный паркинг (500 и более автомашин), многочисленные зоны отдыха, сервисы для посетителей и гипермаркет «Yimpas» (Импаш).</p>
+                        <p>«Bishkek Park» отличает современный дизайн и удобная планировка. Торговый центр оснащен открытыми эскалаторами, панорамными лифтами, великолепным атриумом с просторной площадью и летним балконом.</p>
+                        <p>Режим работы с 10:00 до 22:00 без перерывов и выходных.</p>
+                        <p>Гипермаркет «Yimpas» работает c 10:00 до 22:00.</p>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="callback">
+                    <h3 class="aboutus-title">У ВАС ЕСТЬ ВОПРОСЫ ИЛИ <br> ХОТИТЕ ОСТАВИТЬ ОТЗЫВ?</h3>
+                    <div class="callback-form">
+                        <form action="" method="POST" class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <input type="text" name="" id="input" class="form-control" placeholder="имя" value="" required="required" pattern="" title="">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="" id="input" class="form-control" placeholder="email или телефон" value="" required="required" pattern="" title="">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="" id="input" class="form-control" placeholder="тема" value="" required="required" pattern="" title="">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="" id="input" class="form-control" rows="5" placeholder="сообщение" required="required"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn red-btn">отправить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="remodal-bg">
+        <div id="big" class="remodal" data-remodal-id="modalz">
+            <div class="bigBanner">
+                <img id="mobile" src="img/bigBanner.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="md-overlay" ng-click="closeModal()"></div>
+    <script src="js/libs.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/jquery.imagemapster.js"></script>
+    <script src="js/jquery.qtip.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#slider').find('.sectionHead').css('background-image', 'url("uploads/banners/food.jpg")');
+    });
+    </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $("#mobile").attr("src", "img/smallBanner.jpg");
+        } else {
+            $("#mobile").attr("src", "img/bigBanner.jpg");
+        }
+    });
+    var inst = $('[data-remodal-id = modalz]').remodal();
+    var i = $.cookie('step') || 0;
+    i++;
+    $.cookie('step', i);
+    if (i % 5 == 0) {
+        var inst = $.remodal.lookup[$('[data-remodal-id = modalz]').data('remodal')];
+        inst.open();
+    } else {
+        inst.close();
+    }
+    </script>
+    <script type="text/javascript">
+    // Create the tooltips only when document ready
+    $(document).ready(function() {
+        $('img.floor-img').mapster();
+        // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+        $('area[place]').each(function() {
+            var elem = $(this),
+                map = elem.parent(),
+                image = $('img[usemap="#' + map.attr('name') + '"]');
+
+            elem.qtip({
+                content: {
+                    text: $('#floor-' + elem.attr('place')), // Attempt to grab content from #floor-<State> elements first
+                    attr: 'place' // No content? Grab the content from the 'place' attribute
+                },
+                position: {
+                        my:'bottom center',
+                        at:'center center',
+                },
+                show: {
+                    event: 'mouseover',
+                    solo: true
+                },
+                hide: {
+                    // Allow the user to hover on the tooltip
+                    fixed: true,
+                    delay: 200
+                },
+                style: {
+                    classes: 'qtip-bootstrap'
+                }
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

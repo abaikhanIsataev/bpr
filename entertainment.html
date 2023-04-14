@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abbas Fatullaev">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Бишкек парк</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/jquery.remodal.min.css">
+</head>
+
+<body class="entertainment" ng-app="BishParkApp" ng-controller="EntertainmentCtrl">
+    <div class="md-modal md-effect-16" ng-class="{'md-show': modal_show} " id="modal-16">
+        <div class="md-content">
+            <div class="row">
+                <div class="col-nd-12 modalBlock">
+                    <div class="close-modal" ng-click="closeModal()"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    <div class="col-md-6">
+                        <div id="shop-carusel-{{thumbnail}}" class="shop-carusel carousel slide" data-ride="carousel" data-interval="">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img ng-src="uploads/entertainment/{{thumbnail}}.jpg" alt="...">
+                                    <div class="carousel-caption">
+                                        {{entertainment_name}}
+                                    </div>
+                                </div>
+                                <div class="item" ng-class="{active: (images === $index)}" ng-repeat="images in entertainment_gallery">
+                                    <img ng-src="uploads/entertainment/{{images}}.jpg" alt="...">
+                                </div>
+                            </div>
+                            <!-- Controls -->
+                            <div class="thumbs">
+                                <div class="arrow-left" href="#shop-carusel-{{thumbnail}}" role="button" data-slide="prev"></div>
+                                <ul class="thumbs_list">
+                                    <li class="active" data-target="#shop-carusel-{{thumbnail}}" data-slide-to="0">
+                                        <img ng-src="uploads/entertainment/{{thumbnail}}.jpg" alt="...">
+                                    </li>
+                                    <li ng-class="{active: (images === $index)}" data-target="#shop-carusel-{{thumbnail}}" data-slide-to="{{$index + 1}}" ng-repeat="images in entertainment_gallery">
+                                        <img ng-src="uploads/entertainment/{{images}}.jpg">
+                                    </li>
+                                </ul>
+                                <div class="arrow-right" href="#shop-carusel-{{thumbnail}}" role="button" data-slide="next"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="description">
+                            <h1>{{entertainment_name}}</h1>
+                            <div ng-bind-html="entertainment_description"></div>
+                            <span class="contact">
+                                {{entertainment_email}}<br/>
+                                {{entertainment_tel1}}
+                                {{entertainment_tel2}}
+                                {{entertainment_tel3}}
+                            </span>
+                        </div>
+                        <div class="contactBlock">
+                            <ul class="socialLink">
+                                <li ng-if='instagram !== ""'><a href="https://www.instagram.com/{{instagram}}" target="_blank"><i class=" fa fa-instagram"></i></a></li>
+                                <li ng-if='facebook !== ""'><a href="https://www.facebook.com/{{facebook}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li ng-if='twitter !== ""'><a href="https://www.twitter.com/{{twitter}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="top-navigation">
+            <div class="header-line"></div>
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="navbar-brand navbar-brand-centered">
+                                    <a href="index.html"><img class="logo" src="img/logo.jpg" alt="БишкекПарк"></a>
+                                </div>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                                <ul class="nav navbar-nav navbar-left">
+                                    <li><a href="shops.html">Магазины</a></li>
+                                    <li class="active"><a href="entertainment.html">Развлечения</a></li>
+                                    <li><a href="food.html">Еда</a></li>
+                                </ul>
+                                <ul id="right" class="nav navbar-nav navbar-right">
+                                    <li><a href="events.html">Мероприятия</a></li>
+                                    <li><a href="service.html">Услуги</a></li>
+                                    <li><a href="#">Резиденция</a></li>
+                                </ul>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="slider">
+        <div class="socialLinks">
+            <span class="collapser">
+                <i class="fa fa-chevron-left open" aria-hidden="true"></i>
+                <i class="fa fa-chevron-right closed" aria-hidden="true"></i>
+            </span>
+            <a href="https://www.facebook.com/BishkekPark/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="http://instagram.com/bishkekpark" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://youtube.com/user/BishkekPark1" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/+BishkekParkofficial" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        </div>
+        <div class="sectionHead" style="background-image: url(img/ShopsHeader.jpg);">
+            <div class="container">
+                <div class="row">
+                    <div class="dp-blog">
+                        <a href="blog.html">
+                            <img src="img/live-btn.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <form class="searchbox">
+                    <input type="search" placeholder="Поиск......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+                    <input type="submit" class="searchbox-submit" value="GO">
+                    <span class="searchbox-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                </form>
+                <div class="clr"></div>
+                <br>
+                <div id="category">
+                    <ul class="cstegoryList">
+                        <li>
+                            <a href="http://funcitybishkek.kg/" target="_blank">
+                                <div class="gradient"></div>
+                                <img class="transform" ng-src="uploads/entertainment/oculus.jpg" alt="">
+                                <span class="title">
+                                <img ng-src="uploads/entertainment/bouling_icon.png" alt="" class="icon">
+                                <h3>Боулинг</h3>
+                            </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://funcitybishkek.kg/" target="_blank">
+                                <div class="gradient"></div>
+                                <img class="transform" ng-src="uploads/entertainment/children.jpg" alt="">
+                                <span class="title">
+                                <img ng-src="uploads/entertainment/children_icon.png" alt="" class="icon">
+                                <h3>Город развлечений</h3>
+                            </span>
+                            </a>
+                        </li>
+                        <li ng-repeat="entertainment in entertainment_list">
+                            <a href="#" ng-click="openModal(entertainment)">
+                                <div class="gradient"></div>
+                                <img class="transform" ng-src="uploads/entertainment/{{entertainment.thumbnail}}.jpg" alt="">
+                                <span class="title">
+                                <img ng-src="uploads/entertainment/{{entertainment.icon}}.png" alt="" class="icon">
+                                <h3>{{entertainment.name}}</h3>
+                            </span>
+                            </a>
+                        </li>
+                        <div class="clr"></div>
+                    </ul>
+                    <div class="clr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="memo-block">
+        <div class="infoBlock">
+            Крупнейший торгово-развлекательный комплекс «Bishkek Park», это идеальное место для отдыха, шопинга и развлечений. В комплексе более 100 бутиков и различных заведений. Магазины и сервисы предлагают широчайший ассортимент товара и услуг мировых брендов.
+            <br> Режим работы с 10:00 до 22:00 без перерыва и выходных.
+        </div>
+        <div class="mapBlock">
+            <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.9149532899355!2d74.58825781488126!3d42.87463917915566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7dec2f84b71%3A0x29c1629c788878ab!2z0JHQuNGI0LrQtdC6INCf0LDRgNC6!5e0!3m2!1sru!2skg!4v1464666152218" width="100%" height="230" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn red-btn phone" aria-label="phone">
+                +996 312 69 11 11
+            </button>
+            <button type="button" id="info" class="btn red-btn" aria-label="info-sign">
+                <i class="fa fa-info" aria-hidden="true"></i>
+            </button>
+            <button type="button" id="map-marker" class="btn red-btn" aria-label="map-marker">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <footer class="">
+        <ul class="footer-nav" role="tablist">
+            <li role="presentation"><a href="#aboutus" aria-controls="home" role="tab" data-toggle="tab">О нас</a></li>
+            <li role="presentation"><a href="#callback" aria-controls="home" role="tab" data-toggle="tab">Обратная связь</a></li>
+        </ul>
+        <div class="toogleTop">
+            <div class="tab-content text-center">
+                <a href="#" class="closeToogleBtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                <div role="tabpanel" class="tab-pane fade in  active" id="aboutus">
+                    <h3 class="aboutus-title">ТОРГОВЫЙ ЦЕНТР ДЛЯ ВАС</h3>
+                    <div class="aboutus-dscr">
+                        <p>Торговый центр «Bishkek Park» в настоящее время является одним из крупнейших торговых центров Бишкека.</p>
+                        <p>Если вы выбрали торгово-развлекательный комплекс «Bishkek Park» в качестве места для отдыха и совершения покупок, тот вы, несомненно, приняли мудрое решение. «Bishkek Park» — это прекрасное место для шопинга и развлечений. В комплексе более 100 бутиков и развлекательных заведений. Магазины предлагают вам широчайший ассортимент товара различных мировых и брендов. Основные торговые марки: «Ecco», «Colin’s», «Mexx», «Mango», «Navigare», «Beneton», «Ramsey» «Mavi», «Terranova», «Kira Plastinina».</p>
+                        <p>Развлечений здесь тоже достаточно: это кинотеатр «Синематика», «Боулинг», аттракцион для детей «Fun Land», а также более 15 объектов питания с европейской и восточной кухней, подземный паркинг (500 и более автомашин), многочисленные зоны отдыха, сервисы для посетителей и гипермаркет «Yimpas» (Импаш).</p>
+                        <p>«Bishkek Park» отличает современный дизайн и удобная планировка. Торговый центр оснащен открытыми эскалаторами, панорамными лифтами, великолепным атриумом с просторной площадью и летним балконом.</p>
+                        <p>Режим работы с 10:00 до 22:00 без перерывов и выходных.</p>
+                        <p>Гипермаркет «Yimpas» работает c 10:00 до 22:00.</p>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="callback">
+                    <h3 class="aboutus-title">У ВАС ЕСТЬ ВОПРОСЫ ИЛИ <br> ХОТИТЕ ОСТАВИТЬ ОТЗЫВ?</h3>
+                    <div class="callback-form">
+                        <form action="" method="POST" class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <input type="text" name="" id="input" class="form-control" placeholder="имя" value="" required="required" pattern="" title="">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="" id="input" class="form-control" placeholder="email или телефон" value="" required="required" pattern="" title="">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="" id="input" class="form-control" placeholder="тема" value="" required="required" pattern="" title="">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="" id="input" class="form-control" rows="5" placeholder="сообщение" required="required"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn red-btn">отправить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="remodal-bg">
+        <div id="big" class="remodal" data-remodal-id="modalz">
+            <div class="bigBanner">
+                <img id="mobile" src="img/bigBanner.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="md-overlay" ng-click="closeModal()"></div>
+    <script src="js/libs.min.js"></script>
+    <script src="js/common.js"></script>
+    <!-- ANGULAR -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript">
+    $('.carousel').carousel()
+    </script>
+    <!-- jQuery -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#slider').find('.sectionHead').css('background-image', 'url("uploads/banners/entertainment.jpg")');
+    });
+    </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- modal -->
+    <script src="js/modal/classie.js"></script>
+    <script src="js/modal/cssParser.js"></script>
+    <script src="js/modal/modalEffects.js"></script>
+    <script>
+    $(document).ready(function() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $("#mobile").attr("src", "img/smallBanner.jpg");
+        } else {
+            $("#mobile").attr("src", "img/bigBanner.jpg");
+        }
+    });
+    var inst = $('[data-remodal-id = modalz]').remodal();
+    var i = $.cookie('step') || 0;
+    i++;
+    $.cookie('step', i);
+    if (i % 5 == 0) {
+        var inst = $.remodal.lookup[$('[data-remodal-id = modalz]').data('remodal')];
+        inst.open();
+    } else {
+        inst.close();
+    }
+    </script>
+</body>
+
+</html>

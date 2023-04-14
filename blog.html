@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abbas Fatullaev">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Бишкек парк</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/jquery.remodal.min.css">
+</head>
+
+<body class="simple blog" ng-app="BishParkApp" ng-controller="BlogCtrl">
+     <div class="md-modal md-effect-16" ng-class="{'md-show': modal_show} " id="modal-16">
+        <div class="md-content">
+            <div class="row">
+                <div class="col-nd-12 modalBlock">
+                    <div class="close-modal" ng-click="closeModal()"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    <div class="col-md-12 ">
+                        <img ng-src="uploads/blog/{{thumbnail}}.jpg" class="thumbnail" align="left" alt="">
+                        <h2>{{blog_name}}</h2>
+                        <span ng-bind-html="text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <header>
+        <div class="top-navigation">
+            <div class="header-line"></div>
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="navbar-brand navbar-brand-centered">
+                                    <a href="index.html"><img class="logo" src="img/logo.jpg" alt="БишкекПарк"></a>
+                                </div>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                                <ul class="nav navbar-nav navbar-left">
+                                    <li><a href="shops.html">Магазины</a></li>
+                                    <li><a href="entertainment.html">Развлечения</a></li>
+                                    <li><a href="food.html">Еда</a></li>
+                                </ul>
+                                <ul id="right" class="nav navbar-nav navbar-right">
+                                    <li><a href="events.html">Мероприятия</a></li>
+                                    <li><a href="service.html">Услуги</a></li>
+                                    <li><a href="#">Резиденция</a></li>
+                                </ul>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="slider">
+        <div class="socialLinks">
+            <span class="collapser">
+                <i class="fa fa-chevron-left open" aria-hidden="true"></i>
+                <i class="fa fa-chevron-right closed" aria-hidden="true"></i>
+            </span>
+            <a href="https://www.facebook.com/BishkekPark/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="http://instagram.com/bishkekpark" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://youtube.com/user/BishkekPark1" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/+BishkekParkofficial" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        </div>
+        <div class="sectionHead">
+            <div class="container">
+                <div class="row">
+                    <div class="dp-blog">
+                        <a href="blog.html">
+                            <img src="img/live-btn.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <form class="searchbox">
+                <input type="search" placeholder="Поиск......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+                <input type="submit" class="searchbox-submit" value="GO">
+                <span class="searchbox-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+            </form>
+            <div class="clr"></div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 blog-post" ng-repeat="blog in blog_list" ng-click="openModal(blog)">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 post-thumb">
+                            <div>
+                                <img ng-src="uploads/blog/{{blog.thumbnail}}.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 post-descr">
+                            <h4>{{blog.name}}</h4>
+                            <div ng-bind-html="blog.text"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="memo-block">
+        <div class="infoBlock">
+            Крупнейший торгово-развлекательный комплекс «Bishkek Park», это идеальное место для отдыха, шопинга и развлечений. В комплексе более 100 бутиков и различных заведений. Магазины и сервисы предлагают широчайший ассортимент товара и услуг мировых брендов.
+            <br> Режим работы с 10:00 до 22:00 без перерыва и выходных.
+        </div>
+        <div class="mapBlock">
+            <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.9149532899355!2d74.58825781488126!3d42.87463917915566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7dec2f84b71%3A0x29c1629c788878ab!2z0JHQuNGI0LrQtdC6INCf0LDRgNC6!5e0!3m2!1sru!2skg!4v1464666152218" width="100%" height="230" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn red-btn phone" aria-label="phone">
+                +996 312 69 11 11
+            </button>
+            <button type="button" id="info" class="btn red-btn" aria-label="info-sign">
+                <i class="fa fa-info" aria-hidden="true"></i>
+            </button>
+            <button type="button" id="map-marker" class="btn red-btn" aria-label="map-marker">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <div class="remodal-bg">
+        <div id="big" class="remodal" data-remodal-id="modalz">
+            <div class="bigBanner">
+                <img id="mobile" src="img/bigBanner.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="md-overlay" ng-click="closeModal()"></div>
+    <script src="js/libs.min.js"></script>
+    <script src="js/common.js"></script>
+        <!-- ANGULAR -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <script src="js/app.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#slider').find('.sectionHead').css('background-image', 'url("uploads/banners/blog.jpg")');
+    });
+    </script>
+
+    <!-- modal -->
+    <script src="js/modal/classie.js"></script>
+    <script src="js/modal/cssParser.js"></script>
+    <script src="js/modal/modalEffects.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $("#mobile").attr("src", "img/smallBanner.jpg");
+        } else {
+            $("#mobile").attr("src", "img/bigBanner.jpg");
+        }
+    });
+    var inst = $('[data-remodal-id = modalz]').remodal();
+    var i = $.cookie('step') || 0;
+    i++;
+    $.cookie('step', i);
+    if (i % 5 == 0) {
+        var inst = $.remodal.lookup[$('[data-remodal-id = modalz]').data('remodal')];
+        inst.open();
+    } else {
+        inst.close();
+    }
+    </script>
+</body>
+
+</html>
